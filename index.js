@@ -1,6 +1,7 @@
 // global datastore
 let store = { neighborhoods: [], meals: [], customers: [], deliveries: [] };
 let neighborhoodId = 0;
+let customerId = 0;
 
 class Neighborhood {
 
@@ -61,15 +62,15 @@ class Customer {
 
   constructor(name) {
     this.name = name;
-    this.id = ++neighborhoodId;
+    this.id = ++customerId;
 
-    store.neighborhoods.push(this);
+    store.customers.push(this);
   };
 
   deliveries() {
     return store.deliveries.filter(
       function(delivery) {
-        return delivery.neighborhoodId = this.id;
+        return delivery.customerId = this.id;
       }.bind(this)
     )
   };
