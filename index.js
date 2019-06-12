@@ -84,10 +84,10 @@ class Delivery {
     store.deliveries.push(this);
   };
 
-  deliveriy() {
-    return store.deliveries.find(
-      function(delivery) {
-        return delivery.neighborhoodId === this.id;
+  meal() {
+    return store.meals.find(
+      function(meal) {
+        return meal.neighborhoodId === this.id;
       }.bind(this)
     )
   };
