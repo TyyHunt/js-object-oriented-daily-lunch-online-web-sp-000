@@ -63,10 +63,10 @@ class Customer {
     )
   };
 
-  neighborhood() {
-    return store.neighborhoods.filter(
-      function(neighborhood) {
-        return neighborhood.customerId = this.id;
+  meals() {
+    return store.meals.filter(
+      function(meal) {
+        return meal.customerId = this.id;
       }.bind(this)
     )
   };
