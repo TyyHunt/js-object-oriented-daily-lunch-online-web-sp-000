@@ -92,18 +92,18 @@ class Delivery {
     )
   };
 
-  customer() {
+  customer(){
     return store.customers.find(
-      function(customer) {
-        return customer.id === this.customerId;
+      function(customer){
+        return customer.id === this.customerId
       }.bind(this)
     )
   };
 
-  meal() {
-    return store.meals.find(
-      function(meal) {
-        return meal.id === this.mealId;
+  neighborhood(){
+    return store.neighborhoods.find(
+      function(neighborhood){
+        return neighborhood.id === this.neighborhoodId;
       }.bind(this)
     )
   };
