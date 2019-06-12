@@ -71,6 +71,13 @@ class Customer {
     )
   };
 
+  totalSpent(){
+    return this.meals().map(meal =>{
+      return meal.price
+    }).reduce(function (total, price){
+      return price + total;
+    }, 0);
+
 };
 
 class Delivery {
