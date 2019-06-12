@@ -76,16 +76,16 @@ class Customer{
 };
 
 class Delivery {
-  
+
   constructor(meal, neighborhood, customer) {
     this.id = ++deliveryId;
     this.mealId = meal;
     this.neighborhoodId = neighborhood;
     this.customerId = customer;
-    
+
     store.deliveries.push(this);
   };
-  
+
   meal() {
     return store.meals.find(
       function(meal) {
@@ -93,7 +93,7 @@ class Delivery {
       }.bind(this)
     )
   };
-  
+
   customer() {
     return store.customers.find(
       function(customer) {
@@ -101,7 +101,7 @@ class Delivery {
       }.bind(this)
     )
   };
-  
+
   neighborhood() {
     return store.neighborhoods.find(
       function(neighborhood) {
@@ -109,5 +109,5 @@ class Delivery {
       }.bind(this)
     )
   };
-  
-}; 
+
+};
