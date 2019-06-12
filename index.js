@@ -51,13 +51,15 @@ class Customer{
     this.name = name;
     this.neighborhoodId = neighborhood;
     store.customers.push(this);
-  }
+  };
+  
   deliveries(){
     return store.deliveries.filter(delivery => {
       return delivery.customerId === this.id;
     })
-  }
-  meals(){
+  };
+  
+  meals() {
     return this.deliveries().map(delivery => {
       return store.meals.find(
         function(meal){
@@ -65,14 +67,16 @@ class Customer{
         }.bind(this)
       )
     })
-  }
-  totalSpent(){
-    return this.meals().map(meal =>{
+  };
+  
+  totalSpent() {
+    return this.meals().map(meal => {
       return meal.price
-    }).reduce(function (total, price){
+    }).reduce( function (total, price) {
       return price + total;
     }, 0);
-  }
+  };
+  
 };
 
 class Delivery {
