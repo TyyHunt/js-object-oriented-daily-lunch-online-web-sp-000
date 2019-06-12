@@ -85,9 +85,9 @@ class Delivery {
   };
 
   deliveries() {
-    return store.deliveries.filter(
+    return store.deliveries.find(
       function(delivery) {
-        return delivery.neighborhoodId = this.id;
+        return delivery.neighborhoodId === this.id;
       }.bind(this)
     )
   };
