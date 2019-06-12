@@ -45,40 +45,34 @@ class Meal {
 };
 
 
-class Customer {
-
-  constructor(name, neighborhood) {
-    this.name = name;
+class Customer{
+  constructor(name, neighborhood){
     this.id = ++customerId;
+    this.name = name;
     this.neighborhoodId = neighborhood;
-
     store.customers.push(this);
-  };
-
-  deliveries() {
-    return store.deliveries.filter(
-      function(delivery) {
-        return delivery.customerId = this.id;
-      }.bind(this)
-    )
-  };
-
-  meals() {
-    return store.meals.filter(
-      function(meal) {
-        return meal.customerId = this.id;
-      }.bind(this)
-    )
-  };
-
-  totalSpent() {
+  }
+  deliveries(){
+    return store.deliveries.filter(delivery => {
+      return delivery.customerId === this.id;
+    })
+  }
+  meals(){
+    return this.deliveries().map(delivery => {
+      return store.meals.find(
+        function(meal){
+          return meal.id === delivery.mealId
+        }.bind(this)
+      )
+    })
+  }
+  totalSpent(){
     return this.meals().map(meal =>{
       return meal.price
     }).reduce(function (total, price){
       return price + total;
     }, 0);
-  };
-
+  }
 };
 
 class Delivery {
