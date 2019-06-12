@@ -76,38 +76,38 @@ class Customer{
 };
 
 class Delivery {
-
-  constructor(meal, customer, neighborhood) {
-    this.mealId = meal;
-    this.customerId = customer;
-    this.neighborhoodId = neighborhood;
+  
+  constructor(meal, neighborhood, customer) {
     this.id = ++deliveryId;
-
+    this.mealId = meal;
+    this.neighborhoodId = neighborhood;
+    this.customerId = customer;
+    
     store.deliveries.push(this);
   };
-
+  
   meal() {
     return store.meals.find(
       function(meal) {
-        return meal.id === this.mealId;
+        return meal.id === this.mealId
       }.bind(this)
     )
   };
-
-  customer(){
+  
+  customer() {
     return store.customers.find(
-      function(customer){
+      function(customer) {
         return customer.id === this.customerId
       }.bind(this)
     )
   };
-
-  neighborhood(){
+  
+  neighborhood() {
     return store.neighborhoods.find(
-      function(neighborhood){
-        return neighborhood === this.neighborhood;
+      function(neighborhood) {
+        return neighborhood.id === this.neighborhoodId;
       }.bind(this)
     )
   };
-
-};
+  
+}; 
