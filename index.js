@@ -38,7 +38,7 @@ class Meal {
     this.price = price;
     this.id = ++mealId;
 
-    store.neighborhoods.push(this);
+    store.meals.push(this);
   };
 
   deliveries() {
