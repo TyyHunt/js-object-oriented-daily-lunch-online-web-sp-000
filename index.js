@@ -75,10 +75,10 @@ class Customer {
     )
   };
 
-  customers() {
-    return store.costomers.filter(
-      function(customer) {
-        return customer.neighborhoodId = this.id;
+  neighborhood() {
+    return store.neighborhoods.filter(
+      function(neighborhood) {
+        return neighborhood.customerId = this.id;
       }.bind(this)
     )
   };
