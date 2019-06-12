@@ -42,6 +42,28 @@ class Meal {
     store.meals.push(this);
   };
 
+  deliveries() {
+    return store.deliveries.filter( delivery => {
+      return delivery.mealId === this.id
+    })
+  };
+
+  customers() {
+    return this.deliveries().map( delivery => {
+      return store.customers.find(
+        function(customer) {
+          return customer.id === delivery.customerId
+        }
+      )
+    })
+  };
+
+  static byPrice() {
+    return store.meals.sort( function(a,b) {
+      return b.price - a.price
+    })
+  };
+
 };
 
 
