@@ -30,6 +30,14 @@ class Neighborhood {
     )
   };
 
+  meals() {
+    return store.meals.filter(
+      function(meal) {
+        return meal.neighborhoodId = this.id;
+      }.bind(this)
+    )
+  };
+
 };
 
 class Meal {
