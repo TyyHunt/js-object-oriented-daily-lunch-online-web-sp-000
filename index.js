@@ -84,7 +84,7 @@ class Delivery {
     store.deliveries.push(this);
   };
 
-  deliveries() {
+  deliveriy() {
     return store.deliveries.find(
       function(delivery) {
         return delivery.neighborhoodId === this.id;
