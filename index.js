@@ -92,10 +92,18 @@ class Delivery {
     )
   };
 
-  customers() {
-    return store.costomers.filter(
+  customer() {
+    return store.customers.find(
       function(customer) {
-        return customer.neighborhoodId = this.id;
+        return customer.id === this.customerId;
+      }.bind(this)
+    )
+  };
+
+  meal() {
+    return store.meals.find(
+      function(meal) {
+        return meal.id === this.mealId;
       }.bind(this)
     )
   };
