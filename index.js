@@ -52,13 +52,13 @@ class Customer{
     this.neighborhoodId = neighborhood;
     store.customers.push(this);
   };
-  
+
   deliveries(){
     return store.deliveries.filter(delivery => {
       return delivery.customerId === this.id;
     })
   };
-  
+
   meals() {
     return this.deliveries().map(delivery => {
       return store.meals.find(
@@ -68,7 +68,7 @@ class Customer{
       )
     })
   };
-  
+
   totalSpent() {
     return this.meals().map(meal => {
       return meal.price
@@ -76,7 +76,7 @@ class Customer{
       return price + total;
     }, 0);
   };
-  
+
 };
 
 class Delivery {
